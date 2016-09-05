@@ -1,0 +1,33 @@
+{
+  "name": "webscraper",
+  "version": "1.0.0",
+  "description": "Scrape pages for data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "author": "Danny Teixeira",
+  "license": "ISC",
+  "engines": {
+    "node": "6.5.0"
+  },
+
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cheerio": "*",
+    "express": "*",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.13.1",
+    "method-override": "^2.3.6",
+    "moment": "^2.14.1",
+    "mongoose": "^4.5.5",
+    "morgan": "^1.7.0",
+    "node-cron": "^1.1.1",
+    "node-fetch": "^1.6.0",
+    "node-restful": "^0.2.5",
+    "nodemon": "^1.9.2",
+    "request": "*",
+    "slackbots": "^0.5.2"
+  }
+}
