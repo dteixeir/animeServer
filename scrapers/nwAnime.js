@@ -22,11 +22,11 @@ nwAnime.prototype.scrape = function (anime, animeEpisode) {
                 var data = $(this);
 
                 // Get show/episode# info
-                showData.title = data.attr('title').split("||", 1).toString().trim();
+                showData.title = data.attr('title').split("||", 1).toString().trim().toLowerCase();
 
                 // Split it to get title and episode num seperate
-                showData.title = showData.title.split(' Episode ', 2);
-
+                showData.title = showData.title.split(' episode ', 2);
+                
                 if(showData.title) {
                 	if(anime.find({ Title: cleanString([showData.title[0].toString().trim()]) })) {
                         var show = {
