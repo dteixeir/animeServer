@@ -16,7 +16,7 @@ var config = require('./config.js');
 
 // Variables
 var app = express();
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -34,9 +34,8 @@ app.use(function(req, res, next) {
 });*/
 
 // Connect to mongoDB
-//var db = mongoose.connect(config.db);
+var db = mongoose.connect(config.db);
 app.set('superSecret', config.secret);
-/*
 mongoose.connection.once('open', function(db) {
 
     // Loaders
@@ -57,6 +56,6 @@ mongoose.connection.once('open', function(db) {
     app.scrapers.nwAnime.scrape(app.models.anime, app.models.animeEpisode);
     //app.scrapers.thumbnailScraper.scrape(app);
     
-});*/
+});
 
 exports = module.exports = app;
