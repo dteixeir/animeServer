@@ -1,0 +1,5 @@
+{
+  "name": "animeServer",
+  "description": "Host server for grabbing anime data.",
+  "repository": "https://github.com/dteixeir/animeServer"
+}
