@@ -33,8 +33,10 @@ app.use(function(req, res, next) {
     next();
 });*/
 
+var mongoUri = 'mongodb://danny2:password@ds019766.mlab.com:19766/anime';
+
 // Connect to mongoDB
-var db = mongoose.connect(config.db);
+var db = mongoose.connect(mongoUri);
 app.set('superSecret', config.secret);
 mongoose.connection.once('open', function(db) {
 

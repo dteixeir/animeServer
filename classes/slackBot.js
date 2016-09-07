@@ -6,7 +6,7 @@ var user;
 // create a bot
 // temporary fix until making it an app and using push notifications
 var bot = {
-  message: function (username, message) {
+  /*message: function (username, message) {
 
     User.findOne({Username: username}, function(err, data){
       user = data._doc;
@@ -25,7 +25,7 @@ var bot = {
         });
       });
     });
-  }
+  }*/
 };
 
 module.exports = bot;
