@@ -8,26 +8,6 @@ module.exports = function(app, route) {
     // pre route middleware to run
     app.use('/users', mw.auth);
 
-    // create and save new user
-    app.post("/users", function(req, res, next) {
-        /* initial set up needs to be updated
-        // update to hash password ??
-        var user = new User({
-            Username: 'Danny Teixeira',
-            Password: 'password',
-            Admin: true
-        });
-        */
-        
-        user.save(function(err, data) {
-            if (err) {
-                res.status(409).send('That Username is already in use');
-            } else {
-                res.json({ success: true });
-            }
-        });
-    });
-
     // get users
     app.get('/users', function(req, res, next) {
         User.find({}, function(err, data) {

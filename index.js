@@ -1,22 +1,18 @@
 // 3rd Party Packages
 var bodyParser =     require("body-parser");        // ??
 var express =        require("express");            // express
-var jwt =            require('jsonwebtoken');
 var _ =              require('lodash');
 var methodOverride = require("method-override");
 var mongoose =       require("mongoose");           // mongoose model
-var ObjectId =       require('mongodb').ObjectID;
 var morgan =         require('morgan');
-var request =        require("request");            // ??
 var cors =           require('cors');               // NEED TO LEARN MORE!!!
-var slackbot =       require('./classes/slackBot');
 
 // local files
 var config = require('./config.js');
 
 // Variables
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -24,19 +20,8 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(morgan('dev'));
 app.use(cors());
 
-/*
-// CORS Support
-app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, token');
-    next();
-});*/
-
-var mongoUri = 'mongodb://danny2:password@ds019766.mlab.com:19766/anime';
-
 // Connect to mongoDB
-var db = mongoose.connect(mongoUri);
+var db = mongoose.connect(config.db);
 app.set('superSecret', config.secret);
 mongoose.connection.once('open', function(db) {
 

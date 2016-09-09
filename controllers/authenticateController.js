@@ -29,6 +29,27 @@ module.exports = function(app, route) {
         });
     });
 
+    /*
+        // create and save new user
+    app.post("/createuser", function(req, res, next) {
+        // initial set up needs to be updated
+        // update to hash password ??
+        var user = new User({
+            Username: 'Danny Teixeira',
+            Password: 'password',
+            Admin: true
+        });
+        
+        user.save(function(err, data) {
+            if (err) {
+                res.status(409).send('That Username is already in use');
+            } else {
+                res.json({ success: true });
+            }
+        });
+    });
+    */
+
     // Return middleware ?? per use case stuff?
     return function(req, res, next) {
         next();
